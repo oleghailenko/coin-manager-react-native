@@ -1,10 +1,16 @@
 import {actionTypes} from "../constants";
 
-export const greet = (name) => {
+export const requestCoinsList = () => {
   return {
-    type: actionTypes.GREET,
+    type: actionTypes.COIN_LIST_REQUEST
+  }
+};
+
+export const requestCoin = (id) => {
+  return {
+    type: actionTypes.COIN_ITEM_REQUEST,
     payload: {
-      name
+      id
     }
   }
 };

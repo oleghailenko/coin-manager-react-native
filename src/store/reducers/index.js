@@ -1,17 +1,8 @@
-import {actionTypes} from "../constants";
+import {combineReducers} from "redux";
+import coinList from "./coinList";
+import coinItem from "./coinItem";
 
-const INITIAL_STATE = {
-  name: null
-};
-
-export default (state = INITIAL_STATE, action) => {
-  switch (action.type) {
-    case actionTypes.SET_NAME:
-      return {
-        ...state,
-        name: action.payload.name
-      };
-    default:
-      return state;
-  }
-}
+export default combineReducers({
+  list: coinList,
+  item: coinItem
+})
